@@ -47,8 +47,7 @@ function onLoad(entries, observer) {
   }
 })
 }
-
-        
+    
 // ==========================Search images==========================
 buttonSearch.addEventListener('click', (event) => {
   clearArticlesContainer();
