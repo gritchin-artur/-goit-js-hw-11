@@ -52,6 +52,7 @@ function onLoad(entries, observer) {
 // ==========================Search images==========================
 buttonSearch.addEventListener('click', (event) => {
   clearArticlesContainer();
+  pages = 1;
     event.preventDefault();
   topic = inputForm.value;
   fetchGalaryByBree(topic, pages)

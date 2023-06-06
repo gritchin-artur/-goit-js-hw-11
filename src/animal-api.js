@@ -19,15 +19,4 @@ export async function fetchGalaryByBree(topic, pages) {
 };
  
 
-// export async function fetchLoadMoreImeges(pages) {
-//     try {
-//         const response = await axios.get(
-//             `${URL}/?key=${MY_KEY}&q=${topic}&image_type=photo&orientation=horizontal&safesearch=true&page=${pages}&per_page=40`
-//         );
-//         return response.data;
-//   } catch (_) {
-//     Notify.failure("We're sorry, but you've reached the end of search results.")
-//   }
-// };
-
 
