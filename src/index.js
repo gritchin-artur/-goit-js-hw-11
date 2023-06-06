@@ -54,7 +54,7 @@ buttonSearch.addEventListener('click', (event) => {
   clearArticlesContainer();
   pages = 1;
     event.preventDefault();
-  topic = inputForm.value;
+  let topic = inputForm.value;
   fetchGalaryByBree(topic, pages)
     .then((lists) => {
       imagList(lists)
