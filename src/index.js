@@ -27,6 +27,7 @@ let options = {
   threshold: 1.0,
 };
 
+let topic = '';
  let pages = 1;
 let observerv = new IntersectionObserver(onLoad, options);
 
@@ -47,13 +48,14 @@ function onLoad(entries, observer) {
   }
 })
 }
-    
+
+        
 // ==========================Search images==========================
 buttonSearch.addEventListener('click', (event) => {
   clearArticlesContainer();
   pages = 1;
     event.preventDefault();
-  let topic = inputForm.value;
+  topic = inputForm.value;
   fetchGalaryByBree(topic, pages)
     .then((lists) => {
       imagList(lists)
