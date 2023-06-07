@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-MY_KEY = '36910570-35daf5d8a5ff9002bcd25fc68';
 
 export async function fetchGalaryByBree(topic, pages) {
   MY_KEY = '36910570-35daf5d8a5ff9002bcd25fc68';
