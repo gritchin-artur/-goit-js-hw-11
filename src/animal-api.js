@@ -12,7 +12,7 @@ export async function fetchGalaryByBree(topic, pages) {
             `${URL}/?key=${MY_KEY}&q=${topic}&image_type=photo&orientation=horizontal&safesearch=true&page=${pages}&per_page=40`
         );
         return response.data;
-  } catch (_) {
+  } catch (error) {
     Notify.failure("We're sorry, but you've reached the end of search results.")
     }
 

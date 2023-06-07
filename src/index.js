@@ -42,7 +42,7 @@ function onLoad(entries, observer) {
               observer.unobserve(target);
             } 
     })
-       .catch(() => {
+       .catch((error) => {
               Notify.failure("Sorry, there are no images matching your search query. Please try again.")
 })
   }
@@ -64,7 +64,7 @@ buttonSearch.addEventListener('click', (event) => {
   //   buttonLoadMore.style.display = 'block';
   // }
     })
-       .catch(() => {
+       .catch((error) => {
               Notify.failure("Sorry, there are no images matching your search query. Please try again.")
        }) 
 });
