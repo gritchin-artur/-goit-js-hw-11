@@ -8,7 +8,7 @@ export async function fetchGalaryByBree(topic, pages) {
   console.log(pages)
     try {
         const response = await axios.get(
-            `${URL}/?key=${MY_KEY}&q=${topic}&image_type=photo&orientation=horizontal&safesearch=true&page=${pages}&per_page=40`
+            `${URL}/?key=36910570-35daf5d8a5ff9002bcd25fc68&q=${topic}&image_type=photo&orientation=horizontal&safesearch=true&page=${pages}&per_page=40`
         );
         return response.data;
   } catch (error) {
