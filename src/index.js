@@ -59,12 +59,12 @@ function onLoad(entries, observer) {
         
 // ==========================Search images==========================
 buttonSearch.addEventListener('click', (event) => {
-  clearArticlesContainer();
+   event.preventDefault();
   pages = 1;
-    event.preventDefault();
   topic = inputForm.value;
   fetchGalaryByBree(topic, pages)
     .then((lists) => {
+        clearArticlesContainer();
       imagList(lists)
        Notify.success(`✅ Hooray! We found ${lists.totalHits} images ${topic}`);
       observerv.observe(target)
