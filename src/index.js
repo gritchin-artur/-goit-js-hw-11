@@ -1,5 +1,4 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import Notiflix from 'notiflix';
 import { fetchGalaryByBree } from './animal-api';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
@@ -15,10 +14,18 @@ const div = document.querySelector('.gallery')
         animationSpeed: '250',
         captionPosition: 'bottom',
     });
-
+buttonSearch.disabled = true;
 buttonLoadMore.style.display = 'none';
 
+// ================= form validation =========================
 
+inputForm.addEventListener('input', (event) => {
+  if (event.target.value.length === 0) {
+    buttonSearch.disabled = true;
+  } else {
+   buttonSearch.disabled = false;
+  }
+})
 // =============================Scroll==========================
 const target = document.querySelector('.js-guard');
 let options = {
@@ -44,7 +51,6 @@ function onLoad(entries, observer) {
     })
        .catch((error) => {
               Notify.failure("Sorry, there are no images matching your search query. Please try again.")
-console.log(error)
        })
   }
 })
@@ -60,6 +66,7 @@ buttonSearch.addEventListener('click', (event) => {
   fetchGalaryByBree(topic, pages)
     .then((lists) => {
       imagList(lists)
+       Notify.success(`✅ Hooray! We found ${lists.totalHits} images ${topic}`);
       observerv.observe(target)
   //      if (lists.hits !== lists.totalHits) {
   //   buttonLoadMore.style.display = 'block';
@@ -67,7 +74,6 @@ buttonSearch.addEventListener('click', (event) => {
     })
        .catch((error) => {
               Notify.failure("Sorry, there are no images matching your search query. Please try again.")
-       console.log(error, 'hello')
        }) 
 });
     
