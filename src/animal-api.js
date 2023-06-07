@@ -2,13 +2,13 @@ import axios from "axios";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export async function fetchGalaryByBree(topic, pages) {
-  // MY_KEY = '36910570-35daf5d8a5ff9002bcd25fc68';
+  KEY = '36910570-35daf5d8a5ff9002bcd25fc68';
   URL = 'https://pixabay.com/api/';
    console.log(topic)
   console.log(pages)
     try {
         const response = await axios.get(
-            `${URL}/?key=36910570-35daf5d8a5ff9002bcd25fc68&q=${topic}&image_type=photo&orientation=horizontal&safesearch=true&page=${pages}&per_page=40`
+            `${URL}/?key=${KEY}&q=${topic}&image_type=photo&orientation=horizontal&safesearch=true&page=${pages}&per_page=40`
         );
         return response.data;
   } catch (error) {
